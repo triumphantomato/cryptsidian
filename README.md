@@ -12,7 +12,7 @@ Manual: Copy over main.js, cryptsidian.mjs, and manifest.json to your vault in t
 
 Git Clone: `git clone` this repository into `VaultFolder/.obsidian/plugins/cryptsidian` and `npm install` and `npm run dev`.
 
-Use: open the command palette (cmd + P on mac) and type "cryptsidian" to bring up the encrypt and decrypt modals. To encrypt, select the encrpyt modal and enter your password. To decrpyt, select the decrypt modal and enter the same password. 
+**Use:** open the command palette (cmd + P on mac) and type "cryptsidian" to bring up the encrypt and decrypt modals. To encrypt, select the encrpyt modal and enter your password. To decrpyt, select the decrypt modal and enter the same password. 
 
 If you use different passwords for encryption and decryption, your files will become corrupted.
 

@@ -8,7 +8,7 @@ Encrypt all files in your Obsidian.md Vault with a password.
 3. _File Corruption_ - Do not open files in Obsidian.md (or other app) after encrypting them. Contents can become corrupted and irrecoverable. The plugin auto-closes all open notes to avoid accidental corruption.
 
 ### Installation & Use
-Manual: Copy over main.js, cryptsidian.mjs, and manifest.json to your vault in this location: `VaultFolder/.obsidian/plugins/cryptsidian/`.
+Manual: Copy over main.js and manifest.json (from Releases) to your vault in this location: `VaultFolder/.obsidian/plugins/cryptsidian/`.
 
 Git Clone: `git clone` this repository into `VaultFolder/.obsidian/plugins/cryptsidian` and `npm install` and `npm run dev`.
 
@@ -22,6 +22,8 @@ Files remain encrypted (or decrpyted) after the Obsidian app closes.
 This plugin is desktop-only and has been tested on OSX and Linux. It should work on Windows but has not been tested.
 
 This plugin has not gone through an independent security audit and should not be relied upon for critical security applications.
+
+Future changes to the Obsidian API may break this plugin. Forward compatibility is not guaranteed.
 
 ### Technical Notes
 Files are encrypted and overwritten in-place on disk.

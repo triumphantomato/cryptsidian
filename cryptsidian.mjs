@@ -150,7 +150,7 @@ export function hasEnoughEntropy( input, level=80 ){
 		if (entropy < level){
 			throw{
 				name: "PasswordError",
-				message: "Your password is not strong enough. Try a longer password or adding different kinds of characters, like numbers, special characters, or uppercase letters.\n"
+				message: "Your password is not strong enough. Try adding different kinds of characters, like numbers, special characters, or uppercase letters.\n"
 			}
 		}
 

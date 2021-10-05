@@ -7,10 +7,16 @@ Encrypt all files in your Obsidian.md Vault with a password.
 2. _Remember your Password_ - files cannot be recovered without your password.
 3. _File Corruption_ - Do not open files in Obsidian.md (or other app) after encrypting them. Contents can become corrupted and irrecoverable. The plugin auto-closes all open notes to avoid accidental corruption.
 
-### Installation
+### Installation & Use
 Manual: Copy over main.js, cryptsidian.mjs, and manifest.json to your vault in this location: `VaultFolder/.obsidian/plugins/cryptsidian/`.
 
 Git Clone: `git clone` this repository into `VaultFolder/.obsidian/plugins/cryptsidian` and `npm install` and `npm run dev`.
+
+Use: open the command palette (cmd + P on mac) and type "cryptsidian" to bring up the encrypt and decrypt modals. To encrypt, select the encrpyt modal and enter your password. To decrpyt, select the decrypt modal and enter the same password. 
+
+If you use different passwords for encryption and decryption, your files will become corrupted.
+
+Files remain encrypted (or decrpyted) after the Obsidian app closes.
 
 ### Usability
 This plugin is desktop-only and has been tested on OSX and Linux. It should work on Windows but has not been tested.

@@ -10,7 +10,7 @@ Encrypt all files in your Obsidian.md Vault with a password.
 ### Installation
 Manual: Copy over main.js, cryptsidian.mjs, and manifest.json to your vault in this location: `VaultFolder/.obsidian/plugins/cryptsidian/`.
 
-Git Clone: `git clone` this repository into `VaultFolder/.obsidian/plugins/cryptsidian`.
+Git Clone: `git clone` this repository into `VaultFolder/.obsidian/plugins/cryptsidian` and `npm install` and `npm run dev`.
 
 ### Usability
 This plugin is desktop-only and has been tested on OSX and Linux. It should work on Windows but has not been tested.

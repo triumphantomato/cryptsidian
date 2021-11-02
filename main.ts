@@ -1,7 +1,4 @@
 import { App, Modal, FileView, Workspace, Plugin, WorkspaceLeaf } from 'obsidian';
-
-import * as util from 'util';
-
 import * as cryptoSource from './cryptsidian.mjs'; //does this need to be converted w/ path for x-OS?
 /*
 // functions we're importing

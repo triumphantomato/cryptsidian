@@ -45,7 +45,7 @@ import * as crypto from 'crypto';
 */
 export const ALGORITHM = 'aes-256-ctr';
 export const SALT = Buffer.alloc(32, '3170ebab43b9ccaaacbbb0ee72285a21c39fa324315db3ddcc11da1e3ff816e5', 'hex');
-	//salt derived from crypto.randomBytes(32) - you can replace with your own, but will need to keep track
+	//salt used in scrypt PBKDF, derived from crypto.randomBytes(32) - you can replace with your own, but will need to keep track
 	//of this to decrypt your files in the future if you change it. Recommendation: leave it alone.
 
 /*

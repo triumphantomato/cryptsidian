@@ -1,4 +1,6 @@
-import { App, Modal, Notice, Plugin, PluginSettingTab, Setting } from 'obsidian';
+import { App, Modal, FileView, Workspace, Plugin, WorkspaceLeaf } from 'obsidian';
+
+import * as util from 'util';
 
 import * as cryptoSource from './cryptsidian.mjs'; //does this need to be converted w/ path for x-OS?
 /*
@@ -194,12 +196,30 @@ class CryptoModal extends Modal {
 				this.password = pwConfirmEl.value;
 				cryptoSource.setUserSecretKey(this.password); //derive the secret key via scrypt from user's password
 
-				this.app.workspace.detachLeavesOfType('markdown'); 
-				// closes open notes to prevent post-encryption access, which can corrupt files and make them irrecoverable
+				// close open notes to prevent post-encryption access, which can corrupt files and make them irrecoverable
+				const closeLeaves = async (): Promise<void> => { // we use this function construction to get async/await and keep the right "this"
+					let leaves: WorkspaceLeaf[] = [];
 
-				let files = cryptoSource.getVaultFiles(vault_dir); 
-				cryptoSource.fileProcessor(files, this.operation.toUpperCase()); 
+					this.app.workspace.iterateAllLeaves( (leaf) => {
+						leaves.push(leaf);
+					});
 
+					for (const leaf of leaves){
+						if( leaf.view instanceof FileView ){
+							leaf.detach();
+						}
+					}
+				}
+			
+				const processFiles = async (): Promise<void> => {
+					await closeLeaves();
+					cryptoSource.fileProcessor(files, this.operation.toUpperCase()); 
+				}
+				
+				//run the encryption or decryption
+				let files = cryptoSource.getVaultFiles(vault_dir);
+				processFiles();
+				
 				this.close();
 			}
 		}

@@ -9,15 +9,15 @@ import {ALGORITHM, SALT, ENCRYPT, DECRYPT, KEY_LENGTH} from './tmpcryptsidian.js
 */
 
 interface MyPluginSettings {
-	mySetting: string;
+	mySetting : string;
 }
 
 const DEFAULT_SETTINGS: MyPluginSettings = {
-	mySetting: 'default'
+	mySetting : 'default'
 }
 
 export default class MyPlugin extends Plugin {
-	settings: MyPluginSettings;
+	settings : MyPluginSettings;
 
 	async onload() {
 		console.log('loading plugin');
@@ -25,8 +25,8 @@ export default class MyPlugin extends Plugin {
 		await this.loadSettings();
 
 		this.addCommand({
-			id: 'open-encrypt-modal',
-			name: 'Open Encrypt Modal',
+			id   : 'open-encrypt-modal',
+			name : 'Open Encrypt Modal',
 			
 			checkCallback: (checking: boolean) => {
 				let leaf = this.app.workspace.activeLeaf;
@@ -42,8 +42,8 @@ export default class MyPlugin extends Plugin {
 		});
 
 		this.addCommand({
-			id: 'open-decrypt-modal',
-			name: 'Open Decrypt Modal',
+			id   : 'open-decrypt-modal',
+			name : 'Open Decrypt Modal',
 			
 			checkCallback: (checking: boolean) => {
 				let leaf = this.app.workspace.activeLeaf;
@@ -194,6 +194,10 @@ class CryptoModal extends Modal {
 				cryptoSource.setUserSecretKey(this.password); //derive the secret key via scrypt from user's password
 
 				// close open notes to prevent post-encryption access, which can corrupt files and make them irrecoverable
+				const emptyLeaf = async (leaf: WorkspaceLeaf): Promise<void> => {
+					leaf.setViewState({type:'empty'});
+				}
+
 				const closeLeaves = async (): Promise<void> => { // we use this function construction to get async/await and keep the right "this"
 					let leaves: WorkspaceLeaf[] = [];
 
@@ -203,6 +207,7 @@ class CryptoModal extends Modal {
 
 					for (const leaf of leaves){
 						if( leaf.view instanceof FileView ){
+							await emptyLeaf(leaf);
 							leaf.detach();
 						}
 					}

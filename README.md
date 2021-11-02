@@ -2,10 +2,14 @@
 
 Encrypt all files in your Obsidian.md Vault with a password.
 
+---
+
 **Three Warnings**
 1. _Backup the Vault_ - before running the plugin make a backup to save your data.
 2. _Remember your Password_ - files cannot be recovered without your password.
 3. _File Corruption_ - Do not open files in Obsidian.md (or other app) after encrypting them. Contents can become corrupted and irrecoverable. The plugin auto-closes all open notes to avoid accidental corruption.
+
+---
 
 ### Installation & Use
 You can install the plugin via the Community Plugins tab within Obsidian by searching for "Cryptsidian".
@@ -20,6 +24,8 @@ If you use different passwords for encryption and decryption, your files will be
 
 Files remain encrypted (or decrpyted) after the Obsidian app closes.
 
+---
+
 ### Usability
 This plugin makes it dead simple to encrypt your vault with a user selected password, including all notes and files (e.g. attachments) in the vault directory. Useful for single device, multiple user situations, like a family computer or a shared computer lab.
 
@@ -28,6 +34,8 @@ It is desktop-only and has been tested on OSX and Linux. It should work on Windo
 This plugin has not gone through an independent security audit and should not be relied upon for critical security applications.
 
 Future changes to the Obsidian API may break this plugin. Forward compatibility is not guaranteed.
+
+---
 
 ### Technical Notes
 Files are encrypted and overwritten in-place on disk.

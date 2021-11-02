@@ -19,7 +19,9 @@ If you use different passwords for encryption and decryption, your files will be
 Files remain encrypted (or decrpyted) after the Obsidian app closes.
 
 ### Usability
-This plugin is desktop-only and has been tested on OSX and Linux. It should work on Windows but has not been tested.
+This plugin makes it dead simple to encrypt your vault with a user selected password, including all notes and files (e.g. attachments) in the vault directory. Useful for single device, multiple user situations, like a family computer or a shared computer lab.
+
+It is desktop-only and has been tested on OSX and Linux. It should work on Windows but has not been tested.
 
 This plugin has not gone through an independent security audit and should not be relied upon for critical security applications.
 

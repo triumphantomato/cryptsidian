@@ -18,11 +18,11 @@ Manual Installation: Copy over main.js and manifest.json (from Releases) to your
 
 Git Clone: `git clone` this repository into `VaultFolder/.obsidian/plugins/cryptsidian` and `npm install` and `npm run dev`.
 
-**Use:** open the command palette (cmd + P on mac) and type "cryptsidian" to bring up the encrypt and decrypt modals. To encrypt, select the encrpyt modal and enter your password. To decrpyt, select the decrypt modal and enter the same password. 
+**Use:** open the command palette (cmd + P on mac) and type "cryptsidian" to bring up the encrypt and decrypt modals. To encrypt, select the encrypt modal and enter your password. To decrypt, select the decrypt modal and enter the same password. 
 
 If you use different passwords for encryption and decryption, your files will become corrupted.
 
-Files remain encrypted (or decrpyted) after the Obsidian app closes.
+Files remain encrypted (or decrypted) after the Obsidian app closes.
 
 ---
 
@@ -42,7 +42,7 @@ Files are encrypted and overwritten in-place on disk.
 
 Encryption used is `aes-256-ctr`. A reasonable improvement would be using GCM instead to take advantage of AEAD.
 
-Salt is static in the source code. IV is unique and random (and pre-pended to the file on disk). PBKDF is `scrpyt` with default parameters, from the `Node.js crpyto` API.
+Salt is static in the source code. IV is unique and random (and pre-pended to the file on disk). PBKDF is `scrypt` with default parameters, from the `Node.js crypto` API.
 
 Password is required to posess sufficient entropy, but you can change the amount of entropy required in the `hasEnoughEntropy` function.
 

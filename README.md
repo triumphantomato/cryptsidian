@@ -13,7 +13,7 @@ Encrypt all files in your Obsidian.md Vault with a password.
 
 ## 👋🏾 New Project: OpenRelay  
 
-Want more privacy? Check out my [new project: OpenRelay](https://openrelay.typedream.app/), a community-built, privacy-first VPN with provably no logs! [Tech docs here](https://github.com/triumphantomato/openrelay).
+*Want more privacy? Check out my [new project: OpenRelay](https://openrelay.typedream.app/), a community-built, privacy-first VPN with provably no logs! [Tech docs here](https://github.com/triumphantomato/openrelay).*
 
 ---
 

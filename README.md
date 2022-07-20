@@ -17,7 +17,7 @@ Want more privacy? Check out my [new project: OpenRelay](https://openrelay.typed
 
 ---
 
-### Installation & Use
+### Cryptsidian Installation & Use
 You can install the plugin via the Community Plugins tab within Obsidian by searching for "Cryptsidian".
 
 Manual Installation: Copy over main.js and manifest.json (from Releases) to your vault in this location: `VaultFolder/.obsidian/plugins/cryptsidian/`.
